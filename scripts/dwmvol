@@ -1,0 +1,16 @@
+#!/bin/bash
+
+case $BUTTON in
+	1) setsid -f st -e pulsemixer ;;
+
+esac
+
+: '
+case $BUTTON in
+	2) st -e htop;;
+
+esac
+'
+vol="$(amixer -D pulse get Master | awk -F'[][]' 'END{print $4":"$2}')"
+printf "%s \n" "$vol%"  
+

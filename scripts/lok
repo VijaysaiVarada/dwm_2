@@ -1,0 +1,11 @@
+#!/bin/sh
+# requires scrot imagemagick and i3lock
+
+scrot -m ~/suckless/dwm_test/lockscreen.png &&\
+
+convert ~/suckless/dwm_test/lockscreen.png -blur 0x5 ~/suckless/dwm_test/lockscreen1.png &&\
+
+i3lock -i  ~/suckless/dwm_test/lockscreen1.png
+
+rm ~/suckless/dwm_test/lockscreen.png
+

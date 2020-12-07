@@ -1,0 +1,4 @@
+#!/bin/sh
+
+updates="$(aptitude search '~U' | wc -l)"
+printf "%s  \n" "$updates"

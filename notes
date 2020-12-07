@@ -1,0 +1,38 @@
+open notes from thunar:
+right click -> open with other application -> use a custom command and input "xterm -e vim". 
+
+#mounting android enabling in thunar
+sudo apt-get install jmtpfs
+mkdir ~/Android
+jmtpfs ~/Android
+
+
+#pulseaudio :
+systemctl --user restart pulseaudio.service
+
+#adding firmware from  other pendrive during installation
+mkfs.vfat -I /dev/xxx
+and copy the firm ware , having partitions will cause problems
+ref: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=740503
+
+#pci error in tty
+sudo vi /etc/default/grub
+
+add pci=noaer at the end of GRUB_CMDLINE_LINUX_DEFAULT
+
+sudo update-grub
+
+#touchpad tap to click
+sudo vi 40-libinput.conf
+sudo vi /usr/share/X11/xorg.conf.d/40-libinput.conf
+add 
+Option "Tapping" "on"
+to touchpad section
+
+
+#multiboot
+ventoy.net/
+
+
+
+
